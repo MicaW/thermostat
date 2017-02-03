@@ -1,22 +1,40 @@
 $(document).ready(function() {
   var thermo = new Thermostat();
-$('#currenttemperature').text(thermo.temperature);
-$('#increase').click(function() {alert("alert message")});
+    $('#current-temperature').text(thermo.temperature);
+    $('#power-save').text(thermo._isPowerSave);
+    $('#power-usage').text(thermo.usage());
+
+
+    function updateTemperature() {
+      $('#current-temperature').text(thermo.temperature);
+    }
+
+    $('#increase-button').click(function() {
+      thermo.up(1)
+      updateTemperature()
+      $('#power-usage').text(thermo.usage());
+    });
+
+    $('#decrease-button').click(function() {
+      thermo.down(1)
+      updateTemperature()
+      $('#power-usage').text(thermo.usage());
+    });
+
+    $('#powerSaveOn-button').click(function() {
+      thermo.powerSaveOn()
+      updateTemperature()
+      $('#power-save').text(thermo._isPowerSave);
+    });
+
+    $('#powerSaveOff-button').click(function() {
+      thermo.powerSaveOff()
+      $('#power-save').text(thermo._isPowerSave);
+    });
+
+    $('#reset').click(function() {
+      thermo.reset()
+      updateTemperature()
+    });
+
 });
-
-//
-//   $('#increase').click(function() {
-//     alert("message");
-//   });
-// });
-
-//
-// $(document).ready(function() {
-//   var thermostat = new Thermostat();
-//   $('#currenttemperature').text(thermostat.temperature);
-// })
-
-
-// $(document).ready(function() {
-//    console.log('ready!');
-// });
