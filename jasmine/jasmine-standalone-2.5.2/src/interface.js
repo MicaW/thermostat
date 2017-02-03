@@ -7,18 +7,18 @@ $(document).ready(function() {
 
     function updateTemperature() {
       $('#current-temperature').text(thermo.temperature);
-    }
+      $('#power-usage').text(thermo.usage());
+      $('#power-usage').attr('class', thermo.usage());
+    };
 
     $('#increase-button').click(function() {
       thermo.up(1)
       updateTemperature()
-      $('#power-usage').text(thermo.usage());
     });
 
     $('#decrease-button').click(function() {
       thermo.down(1)
       updateTemperature()
-      $('#power-usage').text(thermo.usage());
     });
 
     $('#powerSaveOn-button').click(function() {
