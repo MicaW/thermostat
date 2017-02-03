@@ -1,25 +1,38 @@
-<DOCTYPE! html>
+<!DOCTYPE html>
 
 <head>
-  <script src="src/thermostat.js"></script>
-  <script src="src/jquery.js"></script>
-  <link type="text/css" rel="stylesheet" href="thermostat.css"/>
+  <script src="src/jquery-3.1.1.min.js"></script>
+    <script src="src/interface.js"></script>
+    <script src="src/thermostat.js"></script>
+
+
+  <!-- <link type="text/css" rel="stylesheet" href="thermostat.css"/> -->
   <title> Thermostat! </title>
 </head>
 
 <body>
+<!--
+  <script> $(document).ready(function() {
+    $('#increase').click(function() {
+       alert("message");
+      });
+  });
+  </script> -->
+
+
+
   <div id="header">
     <h1>Thermostat</h1>
   </div>
 
-  <div id="current_temperature">
-    <h3>Current Temperature:</h3>
+  <div>
+    <h3 id="currenttemperature"></h3>
     <h3>Power Save:</h3>
     <h3>Power Usage State:</h3>
   </div>
 
-  <div id="increase_button">
-    <button type="button">Increase</button>
+  <div id="increase-button">
+    <button type="button" id="increase">Increase</button>
   </div>
 
   <div id="decrease_button">
